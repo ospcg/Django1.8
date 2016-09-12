@@ -1,0 +1,93 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+
+	{%block extrastatic %}
+	{% endblock %}
+
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+
+	<title>{% block title %}Refugio Animal {% endblock %}</title>
+	
+</head>
+<body>
+
+<div class="#">
+
+	{% block navbar %}
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Logo</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mascota <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'mascota:mascota_crear' %}">Registrar</a></li>
+							<li><a href="{% url 'mascota:mascota_listar' %}">Listar</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adopción <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'adopcion:solicitud_crear' %}">Solicitar</a></li>
+							<li><a href="{% url 'adopcion:solicitud_listar' %}">Listar</a></li>
+						</ul>
+					</li>
+				</ul>
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Centro canino CACHICHO</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'logout' %}">Salir</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+    {% endblock %}
+
+    
+	<!-- div que -->
+    <div class="container">
+
+		{% block header %}
+		<h4>Listado de Maascotas</h4>
+		{% endblock %}
+
+
+		{% block content %}
+		<h5>Este es el bloque del contenido del archivo base</h5>
+		{% endblock %}
+
+
+		
+	</div>
+
+
+
+</div>
+	{% block extrajs %}
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	{% endblock %}
+
+	
+</body>
+</html>

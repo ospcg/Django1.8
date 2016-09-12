@@ -1,0 +1,80 @@
+{% extends 'base/base.html' %}
+
+{% block navbar %}
+{% endblock %}
+
+{% block header %}
+	<h2 align="center">Formulario de Registro de Usuarios</h2>
+{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    	<div class="container">
+    		<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+		    		<div class="form-group">
+		    			<label>Nombre</label>
+		    			<input type="text" class="form-control" name="first_name">
+		    		</div>
+				</div>
+		    </div>
+
+		    <div class="row">
+				<div class="col-md-8 col-md-offset-2">
+		    		<div class="form-group">
+		    			<label>Apellidos</label>
+		    			<input type="text" class="form-control" name="last_name">
+		    		</div>
+				</div>
+		    </div>
+
+		     <div class="row">
+				<div class="col-md-8 col-md-offset-2">
+		    		<div class="form-group">
+		    			<label>Usuario</label>
+		    			<input class="form-control" type="text" name="username">
+		    		</div>
+				</div>
+		    </div>
+
+		     <div class="row">
+				<div class="col-md-8 col-md-offset-2">
+		    		<div class="form-group">
+		    			<label>Correo</label>
+		    			<input class="form-control" type="email" name="email">
+		    		</div>
+				</div>
+		    </div>
+
+		     <div class="row">
+				<div class="col-md-8 col-md-offset-2">
+		    		<div class="form-group">
+		    			<label>Contraseña</label>
+		    			<input class="form-control" type="password" name="password1">
+		    		</div>
+				</div>
+		    </div>
+
+		     <div class="row">
+				<div class="col-md-8 col-md-offset-2">
+		    		<div class="form-group">
+		    			<label>Repetir contraseña</label>
+		    			<input class="form-control" type="password" name="password2">
+		    		</div>
+				</div>
+		    </div>
+
+		     <div class="row">
+				<div class="col-md-8 col-md-offset-2">
+		    		<div class="form-group">
+		    			<button class="btn btn-primary" type="submit">Guardar</button>
+		    		</div>
+				</div>
+		    </div>	
+    	</div>
+</form>
+{% endblock %}
+			
+    			
